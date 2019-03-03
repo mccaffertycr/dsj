@@ -1,29 +1,26 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 const labels = ['--', '-', '0', '+', '++'];
 // const emojis = ['😢', '🙁', '😐', '🙂', '😄'];
 const values = [-2, -1, 0, 1, 2];
 
-const JournalEntry = props => {
-  const { note, date, handleChange, handleSubmit } = props;
+const JournalEntry = ({ note, today, handleChange, handleSubmit }) => {
   return (
     <form>
-      <h2>Hello,</h2>
-      <p>{date.toDateString()}</p>
+      <p>{today.toDateString()}</p>
       {values.map(v => {
         return (
-          <>
+          <Fragment key={v}>
             <input
-              key={v + 2}
               type="radio"
               name="score"
               onChange={handleChange}
               value={v}
             />
-            <label key={v + 10} htmlFor="score">
+            <label htmlFor="score">
               {labels[values.indexOf(v)]}
             </label>
-          </>
+          </Fragment>
         );
       })}
       <br />

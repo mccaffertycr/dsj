@@ -4,6 +4,16 @@ const cors = require('cors');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
+const mongoose = require('mongoose');
+
+mongoose
+  .connect(process.env.MONGODB_URI || 'mongodb://localhost/dsjdev', {
+    useNewUrlParser: true,
+    useCreateIndex: true
+  })
+  .catch(err => console.log(err));
+
+mongoose.Promise = global.Promise;
 
 const app = express();
 

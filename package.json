@@ -1,7 +1,6 @@
 {
   "name": "dsj",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "dev": "run-p dev:**",
@@ -15,7 +14,10 @@
     "type": "git",
     "url": "git+https://github.com/mccaffertycr/dsj.git"
   },
-  "author": "",
+  "author": {
+    "name": "Connor McCafferty",
+    "url": "https://connormccafferty.com"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mccaffertycr/dsj/issues"
@@ -26,6 +28,7 @@
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
+    "mongoose": "^5.4.16",
     "morgan": "^1.9.1"
   },
   "devDependencies": {
