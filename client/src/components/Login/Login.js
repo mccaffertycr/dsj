@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 
 const Login = ({loggedIn, login, logout}) => {
@@ -24,7 +26,16 @@ const Login = ({loggedIn, login, logout}) => {
       }
     </>
   )
-
 }
 
 export default Login;
+
+Login.propTypes = {
+  loggedIn: PropTypes.bool,
+  login: PropTypes.func.isRequired,
+  logout: PropTypes.func.isRequired,
+}
+
+Login.defaultProps = {
+  loggedIn: false,
+}
