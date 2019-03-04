@@ -11,12 +11,14 @@ class App extends Component {
   state = {
     loggedIn: false,
     googleId: '',
+    name: '',
   };
 
-  login = id => {
+  login = (id, name) => {
     this.setState({
       loggedIn: true,
       googleId: id,
+      name: name,
     })
   }
 
@@ -24,6 +26,7 @@ class App extends Component {
     this.setState({
       loggedIn: false,
       googleId: '',
+      name: '',
     })
   }
 
