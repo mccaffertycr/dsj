@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 
 const JournalEntry = ({ note, today, handleChange, handleSubmit }) => {
   const labels = ['--', '-', '0', '+', '++'];
@@ -34,3 +35,15 @@ const JournalEntry = ({ note, today, handleChange, handleSubmit }) => {
 };
 
 export default JournalEntry;
+
+JournalEntry.propTypes = {
+  note: PropTypes.string,
+  today: PropTypes.instanceOf(Date),
+  handleChange: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+}
+
+JournalEntry.defaultProps = {
+  note: '',
+  today: new Date(Date.now()),
+}
