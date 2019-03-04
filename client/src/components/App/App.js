@@ -1,11 +1,12 @@
 import React, { Component, Fragment } from 'react';
+
 import Header from '../Header/Header'
-import JournalEntryData from '../../containers/JournalEntryData/JournalEntryData';
-import JournalEntryForm from '../JournalEntryForm/JournalEntryForm';
+import JournalData from '../../containers/JournalData/JournalData';
+import Journal from '../Journal/Journal';
 
 import './App.css';
 
-const JournalEntryFormWithData = JournalEntryData(JournalEntryForm);
+const JournalWithData = JournalData(Journal);
 
 class App extends Component {
   state = {
@@ -36,7 +37,7 @@ class App extends Component {
         <Header {...this.state} login={this.login} logout={this.logout} />
         <br />
         {this.state.loggedIn ? 
-          <JournalEntryFormWithData /> :
+          <JournalWithData name={this.state.name} /> :
           <h2>Welcome, login with Google above to begin.</h2>
         }
       </Fragment>
