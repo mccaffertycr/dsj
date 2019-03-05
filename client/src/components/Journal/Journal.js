@@ -12,12 +12,12 @@ const JournalEntryFormWithData = JournalEntryData(JournalEntryForm);
 class Journal extends PureComponent {
 
   render() {
-    const { name, entries } = this.props;
+    const { googleId, name, entries } = this.props;
     return (
       <div className="journal">
         <h1>Hi, {name}</h1>
         <CalendarHeatMap entries={entries} />
-        <JournalEntryFormWithData />
+        <JournalEntryFormWithData googleId={googleId} />
       </div>
     )
   }
@@ -26,6 +26,8 @@ class Journal extends PureComponent {
 export default Journal;
 
 Journal.propTypes = {
+  loggedIn: PropTypes.bool,
+  googleId: PropTypes.string,
   name: PropTypes.string,
   entries: PropTypes.arrayOf(
     PropTypes.shape({
@@ -36,6 +38,7 @@ Journal.propTypes = {
 }
 
 Journal.defaultProps = {
+  loggedIn: true,
   name: '',
   entries: [],
 }

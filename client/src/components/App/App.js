@@ -37,7 +37,7 @@ class App extends Component {
         <Header {...this.state} login={this.login} logout={this.logout} />
         <br />
         {this.state.loggedIn ? 
-          <JournalWithData name={this.state.name} /> :
+          <JournalWithData {...this.state} /> :
           <h2>Welcome, login with Google above to begin.</h2>
         }
       </Fragment>

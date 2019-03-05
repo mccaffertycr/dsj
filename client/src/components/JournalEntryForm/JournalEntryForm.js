@@ -5,7 +5,6 @@ import './journalentryform.css';
 
 const JournalEntry = ({ note, today, handleChange, handleSubmit }) => {
   const labels = ['--', '-', '0', '+', '++'];
-  // const emojis = ['😢', '🙁', '😐', '🙂', '😄'];
   const values = [-2, -1, 0, 1, 2];
 
   return (
