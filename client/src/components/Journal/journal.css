@@ -1,3 +1,7 @@
 .journal {
   display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 80%;
+  height: 70vh;
 }

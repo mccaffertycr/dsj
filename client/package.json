@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "normalize.css": "^8.0.1",
+    "prop-types": "^15.7.2",
     "react": "^16.8.3",
+    "react-calendar-heatmap": "^1.8.0",
     "react-dom": "^16.8.3",
     "react-google-login": "^5.0.2",
     "react-scripts": "2.1.5"
