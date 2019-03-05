@@ -9,7 +9,8 @@ const mongoose = require('mongoose');
 mongoose
   .connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/dsjdev', {
     useNewUrlParser: true,
-    useCreateIndex: true
+    useCreateIndex: true,
+    useFindAndModify: false,
   })
   .then(() => {
     console.log('Successfully connected to Mongo.')

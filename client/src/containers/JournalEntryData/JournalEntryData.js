@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+
 import { getEmojiScore } from './helpers.js';
+import api from '../../utils/api';
 
 export default function JournalEntryData(WrappedComponent) {
   return class extends Component {
@@ -23,7 +25,15 @@ export default function JournalEntryData(WrappedComponent) {
         emojiScore: getEmojiScore(parseInt(this.state.score)), 
         note: this.state.note
       }
-      console.log(googleId, journalEntry);
+      api
+        .submitJournalEntry(googleId, journalEntry)
+        .then(res => {
+          if (res.status === 200) console.log(res.data);
+          this.setState({
+            score: 0,
+            note: '',
+          })
+        })
       e.preventDefault();
     }
 
