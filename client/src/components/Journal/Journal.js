@@ -16,8 +16,8 @@ class Journal extends PureComponent {
     return (
       <div className="journal">
         <h1>Hi, {name}</h1>
-        <CalendarHeatMap entries={entries} />
         <JournalEntryFormWithData googleId={googleId} />
+        <CalendarHeatMap entries={entries} />
       </div>
     )
   }

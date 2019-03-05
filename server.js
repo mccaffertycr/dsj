@@ -7,9 +7,12 @@ const path = require('path');
 const mongoose = require('mongoose');
 
 mongoose
-  .connect(process.env.MONGODB_URI || 'mongodb://localhost/dsjdev', {
+  .connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/dsjdev', {
     useNewUrlParser: true,
     useCreateIndex: true
+  })
+  .then(() => {
+    console.log('Successfully connected to Mongo.')
   })
   .catch(err => console.log(err));
 
@@ -21,6 +24,10 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+const routes = require('./routes');
+
+app.use(routes);
 
 if (process.env.NODE_ENV === 'production') {
   // serve static files

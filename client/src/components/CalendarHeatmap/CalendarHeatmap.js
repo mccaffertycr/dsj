@@ -10,18 +10,14 @@ class CalendarHeatMap extends Component {
 
     if (entries.length) {
       return (
-        <CalendarHeatmap
-          startDate={new Date(entries[0].date)}
-          endDate={new Date(entries[entries.length - 1].date)}
-          values={entries}
-          showWeekdayLabels={true}
-          classForValue={(value) => {
-            if (!value) {
-              return 'color-empty';
-            }
-            return `color-scale-${value.score}`;
-          }}
-        />
+        <div className="heatmap-container">
+          <CalendarHeatmap
+            startDate={new Date(entries[0].date)}
+            endDate={new Date(entries[entries.length - 1].date)}
+            values={entries}
+            showWeekdayLabels={true}
+          />
+        </div>
       )
     }
     else return null;
