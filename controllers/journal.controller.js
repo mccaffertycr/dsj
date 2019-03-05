@@ -5,7 +5,7 @@ module.exports = {
     Journal
       .findOne(req.body)
         .then(dbResult => {
-        if (dbResult) res.json(dbResult.entries);
+        if (dbResult) console.log('A journal is already registered for this user.');
         else {
           Journal
             .create(req.body)
@@ -17,6 +17,14 @@ module.exports = {
       })
       .catch(err => res.status(422).json(err));
   },
+  findJournal: (req, res) => {
+    Journal 
+      .findOne({ googleId: req.params.id })
+      .then(dbJournal => {
+        res.json(dbJournal.entries);
+      })
+      .catch(err => res.status(422).json(err));
+  },
   createJournalEntry: (req, res) => {
     Journal
       .findOneAndUpdate({ googleId: req.params.id }, {$push: { entries: req.body }})
@@ -25,12 +33,4 @@ module.exports = {
       })
       .catch(err => res.status(422).json(err));
   },
-  findJournal: (req, res) => {
-    Journal 
-      .find({ googleId: req.params.id })
-      .then(dbJournal => {
-        res.json(dbJournal.entries)
-      })
-      .catch(err => res.status(422).json(err));
-  }
 }

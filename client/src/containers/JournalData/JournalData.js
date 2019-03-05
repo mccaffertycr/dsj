@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
-import mockData from './mockJournalEntries';
+import api from '../../utils/api';
+
+// import mockData from './mockJournalEntries';
 
 export default function JournalData(WrappedComponent) {
   return class extends Component {
@@ -9,9 +11,16 @@ export default function JournalData(WrappedComponent) {
     };
 
     componentDidMount() {
-      this.setState({
-        entries: mockData,
-      })
+      const { googleId } = this.props;
+      api
+        .getJournalEntries(googleId)
+        .then(res => {
+          if (res.status === 200) {
+            this.setState({
+              entries: res.data,
+            })
+          }
+        })
     }
 
     render() {

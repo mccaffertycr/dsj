@@ -4,6 +4,8 @@ import Header from '../Header/Header'
 import JournalData from '../../containers/JournalData/JournalData';
 import Journal from '../Journal/Journal';
 
+import api from '../../utils/api';
+
 import './App.css';
 
 const JournalWithData = JournalData(Journal);
@@ -21,6 +23,11 @@ class App extends Component {
       googleId: id,
       name: name,
     })
+    api.registerJournal(id).then((res, err) => {
+      if (err) throw err;
+      else console.log(res);
+    })
+      
   }
 
   logout = () => {
