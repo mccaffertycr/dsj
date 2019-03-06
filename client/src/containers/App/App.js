@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 
-import Header from '../Header/Header'
-import JournalData from '../../containers/JournalData/JournalData';
-import Journal from '../Journal/Journal';
+import Header from '../../components/Header/Header'
+import JournalData from '../JournalData/JournalData';
+import Journal from '../../components/Journal/Journal';
 
 import api from '../../utils/api';
 

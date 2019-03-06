@@ -8,6 +8,7 @@
 
 # testing
 /coverage
+/client/__mocks__
 
 # production
 /build
