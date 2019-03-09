@@ -1,0 +1,11 @@
+.darkmode-toggle {
+  height: 24px;
+}
+
+.darkmode-toggle.react-toggle--checked .react-toggle-track {
+  background-color: black;
+}
+
+.darkmode-toggle.react-toggle--checked .react-toggle-track:hover {
+  background-color: yellow;
+}

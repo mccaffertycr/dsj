@@ -12,10 +12,15 @@ const JournalWithData = JournalData(Journal);
 
 class App extends Component {
   state = {
+    darkModeOn: false,
     loggedIn: false,
     googleId: '',
     name: '',
   };
+
+  componentDidMount() {
+    document.getElementById('app-container').classList.add('light');
+  }
 
   login = (id, name) => {
     this.setState({
@@ -27,7 +32,6 @@ class App extends Component {
       if (err) throw err;
       else console.log(res);
     })
-      
   }
 
   logout = () => {
@@ -38,13 +42,26 @@ class App extends Component {
     })
   }
 
+  darkMode = e => {
+    const appContainer = document.getElementById('app-container');
+    if (this.state.darkModeOn) {
+      appContainer.classList.remove('dark');
+      appContainer.classList.add('light');
+      this.setState({ darkModeOn: false})
+    } else {
+      appContainer.classList.remove('light');
+      appContainer.classList.add('dark');
+      this.setState({ darkModeOn: true });
+    }
+  } 
+
   render() {
     return (
       <Fragment>
         <Header {...this.state} login={this.login} logout={this.logout} />
         <br />
         {this.state.loggedIn ? 
-          <JournalWithData {...this.state} /> :
+          <JournalWithData {...this.state} darkMode={this.darkMode} /> :
           <h2>Welcome, login with Google above to begin.</h2>
         }
       </Fragment>
