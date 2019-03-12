@@ -15,15 +15,15 @@ const Lightbulb = () => (
   </div>
 )
 
-const Moon = () => (
-  <div style={{
-    fontSize: '1em',
-    position: 'absolute',
-    top: '0.4em',
-  }}>
-    <span role="img" aria-label="moon">🌑</span>
-  </div>
-)
+// const Moon = () => (
+//   <div style={{
+//     fontSize: '1em',
+//     position: 'absolute',
+//     top: '0.4em',
+//   }}>
+//     <span role="img" aria-label="moon">🌑</span>
+//   </div>
+// )
 
 const DarkModeToggle = ({ darkModeOn, darkMode }) => {
   return (
@@ -31,7 +31,7 @@ const DarkModeToggle = ({ darkModeOn, darkMode }) => {
       defaultChecked={darkModeOn}
       className={'darkmode-toggle'}
       icons={{
-        checked: <Moon />,
+        checked: '',
         unchecked: <Lightbulb />,
       }}
       onChange={darkMode} />

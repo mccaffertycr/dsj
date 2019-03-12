@@ -15,6 +15,8 @@ class CalendarHeatMap extends Component {
     if (entries.length) {
       return (
         <div className="heatmap-container">
+          <h2 className="heatmap-header"><span role="img" aria-label="calendar">📅</span> Heatmap</h2>
+          <div className="heatmap-wrapper">
           <CalendarHeatmap
             startDate={shiftDate(today, -150)}
             values={entries}
@@ -32,6 +34,7 @@ class CalendarHeatMap extends Component {
             }}
           />
           <ReactTooltip />
+          </div>
         </div>
       )
     }

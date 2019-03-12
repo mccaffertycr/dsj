@@ -10,8 +10,10 @@ const JournalEntry = ({ note, today, handleChange, handleSubmit }) => {
   return (
     <form>
       <div className="journal-entry-form">
-      <p>{today.toDateString()}</p>
-        <div>
+      <h2 className="journal-entry-header">
+        <span role="img" aria-label="notebook">📓</span> New Entry
+      </h2>
+        <div className="radio-container">
           {values.map(v => {
             return (
               <Fragment key={v}>
@@ -28,9 +30,9 @@ const JournalEntry = ({ note, today, handleChange, handleSubmit }) => {
             );
           })}
         </div>
-        <label htmlFor="note">Note: </label>
+        {/* <label htmlFor="note">Note: </label> */}
         <textarea rows={6} name="note" placeholder="Add a note (Optional)" onChange={handleChange} value={note} />
-        <button type="submit" onClick={handleSubmit}>submit</button>
+        <button className="journal-entry-form-submit" type="submit" onClick={handleSubmit}>submit</button>
       </div>
     </form>
   );
@@ -40,12 +42,10 @@ export default JournalEntry;
 
 JournalEntry.propTypes = {
   note: PropTypes.string,
-  today: PropTypes.instanceOf(Date),
   handleChange: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
 }
 
 JournalEntry.defaultProps = {
   note: '',
-  today: new Date(Date.now()),
 }

@@ -8,7 +8,6 @@ export default function JournalEntryData(WrappedComponent) {
     state = {
       score: 0,
       note: '',
-      today: new Date(Date.now())
     };
 
     handleChange = e => {
@@ -18,9 +17,9 @@ export default function JournalEntryData(WrappedComponent) {
     }
 
     handleSubmit = e => {
-      const { googleId } = this.props;
+      const { googleId, today } = this.props;
       const journalEntry = {
-        date: this.state.today.toISOString().slice(0, 10),
+        date: today.toISOString().slice(0, 10),
         score: this.state.score,
         emojiScore: getEmojiScore(parseInt(this.state.score)), 
         note: this.state.note

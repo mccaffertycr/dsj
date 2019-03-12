@@ -4,12 +4,35 @@
   flex-wrap: wrap;
   align-items: center;
   border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.637);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 2px 0px, rgba(0, 0, 0, 0.25) 0px 0px 2px 0px;
   background: white;
   color: black;
   padding: 10px;
+  height: 215px;
 }
 
-.note {
-  height: 100px;
+.journal-entry-header {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  max-height: 40px;
+  min-width: 100%;
+}
+
+.radio-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.journal-entry-form-submit {
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 2px;
+  border-style: none;
+  border-color: none;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 2px 0px, rgba(0, 0, 0, 0.25) 0px 0px 2px 0px;
+  background: #eeeeee;
 }

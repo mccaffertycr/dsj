@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 
 import api from '../../utils/api';
 
-// import mockData from './mockJournalEntries';
-
 export default function JournalData(WrappedComponent) {
   return class extends Component {
     state = {
-      entries: []
+      entries: [],
+      today: new Date(Date.now()),
     };
 
     componentDidMount() {

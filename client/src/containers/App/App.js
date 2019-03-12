@@ -58,7 +58,7 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <Header {...this.state} login={this.login} logout={this.logout} />
+        <Header loggedIn={this.state.loggedIn} login={this.login} logout={this.logout} />
         <br />
         {this.state.loggedIn ? 
           <JournalWithData {...this.state} darkMode={this.darkMode} /> :
