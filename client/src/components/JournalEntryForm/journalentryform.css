@@ -5,10 +5,18 @@
   align-items: center;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 2px 0px, rgba(0, 0, 0, 0.25) 0px 0px 2px 0px;
-  background: white;
-  color: black;
   padding: 10px;
   height: 215px;
+}
+
+.light .journal-entry-form {
+  background: white;
+  color: black;
+}
+
+.dark .journal-entry-form  {
+  background: grey;
+  color: white;
 }
 
 .journal-entry-header {
