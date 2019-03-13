@@ -17,23 +17,23 @@ class CalendarHeatMap extends Component {
         <div className="heatmap-container">
           <h2 className="heatmap-header"><span role="img" aria-label="calendar">📅</span> Heatmap</h2>
           <div className="heatmap-wrapper">
-          <CalendarHeatmap
-            startDate={shiftDate(today, -150)}
-            values={entries}
-            showWeekdayLabels={true}
-            classForValue={(value) => {
-              if (!value) {
-                return 'color-empty';
-              }
-              return `color-scale-${value.score}`;
-            }}
-            tooltipDataAttrs={value => {
-              return {
-                'data-tip': getTooltip(value), 
-              };
-            }}
-          />
-          <ReactTooltip />
+            <CalendarHeatmap
+              startDate={shiftDate(today, -150)}
+              values={entries}
+              showWeekdayLabels={true}
+              classForValue={(value) => {
+                if (!value) {
+                  return 'color-empty';
+                }
+                return `color-scale-${value.score}`;
+              }}
+              tooltipDataAttrs={value => {
+                return {
+                  'data-tip': getTooltip(value), 
+                };
+              }}
+            />
+            <ReactTooltip />
           </div>
         </div>
       )
