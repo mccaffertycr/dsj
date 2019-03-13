@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const journalSchema = new Schema({
   googleId: { type: String, required: true },
+  email: { type: String, required: true },
   entries: []
 });
 

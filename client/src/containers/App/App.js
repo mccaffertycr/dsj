@@ -15,6 +15,7 @@ class App extends Component {
     darkModeOn: false,
     loggedIn: false,
     googleId: '',
+    email: '',
     name: '',
   };
 
@@ -22,10 +23,11 @@ class App extends Component {
     document.getElementById('app-container').classList.add('light');
   }
 
-  login = (id, name) => {
+  login = (id, email, name) => {
     this.setState({
       loggedIn: true,
       googleId: id,
+      email: email,
       name: name,
     })
     api.registerJournal(id).then((res, err) => {
