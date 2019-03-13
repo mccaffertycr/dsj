@@ -27,7 +27,7 @@ class Journal extends PureComponent {
         <JournalInfo name={name} today={today} lastEntryDate={lastEntryDate} />
         <JournalEntryFormWithData googleId={googleId} today={today} lastEntryDate={lastEntryDate} />
         <DarkModeToggle darkModeOn={darkModeOn} darkMode={darkMode} />
-        <CalendarHeatMap entries={entries} />
+        <CalendarHeatMap entries={entries} today={today} />
       </div>
     )
   }

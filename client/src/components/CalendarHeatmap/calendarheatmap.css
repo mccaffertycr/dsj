@@ -1,6 +1,6 @@
 .heatmap-container {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column;
   justify-content: flex-start;
   align-items: center;
   width: 100%;
@@ -29,8 +29,8 @@
  
 .heatmap-wrapper {
   display: flex;
-  width: 80%;
-  margin: 0 auto;
+  width: 100%;
+  /* margin: 0 auto; */
 } 
 
 .react-calendar-heatmap {

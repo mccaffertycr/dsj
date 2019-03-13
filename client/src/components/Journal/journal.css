@@ -5,3 +5,9 @@
   width: 80%;
   height: 70vh;
 }
+
+@media only screen and (max-width: 768px) {
+  .journal-container {
+    flex-flow: column;
+  }
+}
