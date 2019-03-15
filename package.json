@@ -8,7 +8,7 @@
     "dev:app": "cd client && yarn start",
     "build:app": "cd client && yarn build",
     "start": "node server.js",
-    "heroku-postbuild": "cd client && npm run build:app"
+    "heroku-postbuild": "cd client && yarn build:app"
   },
   "repository": {
     "type": "git",
