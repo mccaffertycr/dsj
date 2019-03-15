@@ -6,7 +6,7 @@
     "dev": "run-p dev:**",
     "dev:server": "nodemon server.js",
     "dev:app": "cd client && yarn start",
-    "build:app": "cd client && yarn i && yarn build",
+    "build:app": "cd client && yarn install && yarn build",
     "start": "node server.js",
     "heroku-postbuild": "yarn build:app"
   },
