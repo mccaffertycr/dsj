@@ -6,7 +6,8 @@
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 2px 0px, rgba(0, 0, 0, 0.25) 0px 0px 2px 0px;
   padding: 10px;
-  height: 215px;
+  min-height: 215px;
+  margin-bottom: 10px;
 }
 
 .light .journal-entry-form {
@@ -43,4 +44,10 @@
   border-color: none;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 2px 0px, rgba(0, 0, 0, 0.25) 0px 0px 2px 0px;
   background: #eeeeee;
+}
+
+@media only screen and (max-width: 768px) {
+  .journal-entry-form {
+    min-width: 100%;
+  }
 }

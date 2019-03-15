@@ -7,6 +7,8 @@
   padding: 10px;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 2px 0px, rgba(0, 0, 0, 0.25) 0px 0px 2px 0px;
+  max-height: 225px;
+  margin-bottom: 10px;
 }
 
 
@@ -29,13 +31,13 @@
  
 .heatmap-wrapper {
   display: flex;
-  width: 100%;
-  /* margin: 0 auto; */
+  align-items: center;
+  width: 60%;
+  margin-top: 25px;
 } 
 
 .react-calendar-heatmap {
   width: 100%;
-  margin-top: 25px;
 }
 
 .react-calendar-heatmap .color-scale--2 { fill: #50005e; }
@@ -45,3 +47,11 @@
 .react-calendar-heatmap .color-scale-2 { fill: #efff63; }
 
 
+@media only screen and (max-width: 768px) {
+  .heatmap-container {
+    min-height: 200px;
+  }
+  .heatmap-wrapper {
+    width: 100%;
+  }
+}
