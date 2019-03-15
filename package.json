@@ -8,7 +8,7 @@
     "dev:app": "cd client && yarn start",
     "build:app": "cd client && yarn build",
     "start": "node server.js",
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+    "heroku-postbuild": "cd client && npm run build:app"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/mccaffertycr/dsj/issues"
   },
-  "homepage": "https://github.com/mccaffertycr/dsj#readme",
+  "homepage": "https://daily-sentiment-journal.herokuapp.com/",
   "dependencies": {
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
