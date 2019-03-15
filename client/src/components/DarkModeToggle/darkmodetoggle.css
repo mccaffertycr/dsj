@@ -1,22 +1,3 @@
-.darkmode-toggle {
-  height: 24px;
-  position: absolute;
-  right: 10px;
-  top: 100px;
-}
-
-/* .darkmode-toggle.react-toggle--checked .react-toggle-track {
-  background-color: black;
-}
-
-.darkmode-toggle.react-toggle--checked .react-toggle-track:hover {
-  background-color: yellow !important;
-}
-
-.react-toggle--checked .react-toggle-track:hover {
-  background-color: yellow;
-} */
-
 /*
  * Copyright (c) 2015 instructure-react
  * Forked from https://github.com/aaronshaf/react-toggle/
@@ -24,7 +5,6 @@
 
 .react-toggle {
   touch-action: pan-x;
-
   display: inline-block;
   position: relative;
   cursor: pointer;

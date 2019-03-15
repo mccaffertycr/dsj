@@ -6,6 +6,7 @@
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 2px 0px, rgba(0, 0, 0, 0.25) 0px 0px 2px 0px;
   padding: 10px;
+  width: 20vw;
   min-height: 215px;
   margin-bottom: 10px;
 }
@@ -49,5 +50,11 @@
 @media only screen and (max-width: 768px) {
   .journal-entry-form {
     min-width: 100%;
+  }
+  .radio-container {
+    width: 80%;
+  }
+  .journal-entry-note {
+    width: 80%;
   }
 }
