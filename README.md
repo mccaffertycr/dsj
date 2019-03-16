@@ -10,8 +10,13 @@ Log in with a Google account. Then to make a new entry just pick the value that 
 
 ## Installation
 
+Clone the repo:
 `git clone https://github.com/mccaffertycr/dsj.git`
 
+Install dependencies:
 `yarn install`
 
 `cd client && yarn install`
+
+Run in dev mode:
+`cd .. && yarn dev`
