@@ -5,7 +5,6 @@ import { GoogleLogin, GoogleLogout } from 'react-google-login';
 
 const Login = ({loggedIn, login, logout}) => {
   const responseGoogle = response => {
-    console.log(response);
     login(response.googleId, response.profileObj.email, response.profileObj.givenName);
   };
 
