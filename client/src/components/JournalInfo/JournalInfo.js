@@ -5,13 +5,12 @@ import Clock from 'react-live-clock';
 import './journalinfo.css'
 
 function getMessage(today, lastEntryDate) {
-  if (lastEntryDate) {
+  if (!lastEntryDate) return <p>You haven't made any entries yet.</p>;
+  else {
     return today.toDateString() > lastEntryDate.toDateString() ? 
             <p>Your last entry was {lastEntryDate.toDateString()}</p> :
             <p>You already made an entry today.</p> 
-  } else {
-    return <p>You haven't made any entries yet.</p>
-  }
+  } 
 }
 
 const JournalInfo = ({ name, today, lastEntryDate }) => {
