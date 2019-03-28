@@ -17,7 +17,7 @@ export default function JournalEntryData(WrappedComponent) {
     }
 
     handleSubmit = e => {
-      const { googleId, today } = this.props;
+      const { googleId, today, getJournalEntries } = this.props;
       const journalEntry = {
         date: today.toISOString().slice(0, 10),
         score: this.state.score,
@@ -32,6 +32,7 @@ export default function JournalEntryData(WrappedComponent) {
             score: 0,
             note: '',
           })
+          getJournalEntries();
         })
       e.preventDefault();
     }

@@ -30,7 +30,6 @@ const JournalEntry = ({ note, today, handleChange, handleSubmit }) => {
             );
           })}
         </div>
-        {/* <label htmlFor="note">Note: </label> */}
         <textarea rows={6} name="note" className="journal-entry-note" placeholder="Add a note (Optional)" onChange={handleChange} value={note} />
         <button className="journal-entry-form-submit" type="submit" onClick={handleSubmit}>submit</button>
       </div>
@@ -44,6 +43,7 @@ JournalEntry.propTypes = {
   note: PropTypes.string,
   handleChange: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
+  getJournalEntries: PropTypes.func.isRequired,
 }
 
 JournalEntry.defaultProps = {

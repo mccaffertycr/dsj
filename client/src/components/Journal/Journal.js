@@ -14,18 +14,17 @@ const JournalEntryFormWithData = JournalEntryData(JournalEntryForm);
 class Journal extends PureComponent {
 
   getLastEntry(entries) {
-    if (entries.length) return new Date(entries[entries.length - 1].date);
+    if (entries.length) return new Date(`${entries[entries.length - 1].date} EST`);
     else return null;
   }
 
   render() {
-    const { googleId, name, entries, today, darkModeOn, darkMode } = this.props;
-    const lastEntryDate = this.getLastEntry(entries);
-
+    const { googleId, name, entries, today, getJournalEntries, darkModeOn, darkMode } = this.props;
+    let lastEntryDate = this.getLastEntry(entries);
     return (
       <div className="journal-container">
         <JournalInfo name={name} today={today} lastEntryDate={lastEntryDate} />
-        <JournalEntryFormWithData googleId={googleId} today={today} lastEntryDate={lastEntryDate} />
+        <JournalEntryFormWithData googleId={googleId} today={today} getJournalEntries={getJournalEntries} />
         <DarkModeToggle darkModeOn={darkModeOn} darkMode={darkMode} />
         <CalendarHeatMap entries={entries} today={today} />
       </div>
@@ -47,6 +46,7 @@ Journal.propTypes = {
       date: PropTypes.string,
     })
   ),
+  getJournalEntries: PropTypes.func,
   darkMode: PropTypes.func,
 }
 

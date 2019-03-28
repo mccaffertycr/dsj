@@ -4,10 +4,10 @@ import Clock from 'react-live-clock';
 
 import './journalinfo.css'
 
-function getMessage(props) {
-  if (props.lastEntryDate) {
-    return props.today > props.lastEntryDate ? 
-            <p>Your last entry was {props.lastEntryDate.toDateString()}</p> :
+function getMessage(today, lastEntryDate) {
+  if (lastEntryDate) {
+    return today.toDateString() > lastEntryDate.toDateString() ? 
+            <p>Your last entry was {lastEntryDate.toDateString()}</p> :
             <p>You already made an entry today.</p> 
   } else {
     return <p>You haven't made any entries yet.</p>
@@ -24,7 +24,7 @@ const JournalInfo = ({ name, today, lastEntryDate }) => {
         format={'dddd, MMMM Do - h:mm:ss A'}
         ticking={true}
         />
-      {getMessage({today, lastEntryDate})}
+      {getMessage(today, lastEntryDate)}
     </div>
   )
 }

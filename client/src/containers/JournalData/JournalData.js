@@ -10,21 +10,26 @@ export default function JournalData(WrappedComponent) {
     };
 
     componentDidMount() {
+      this.getJournalEntries();
+    }
+
+    getJournalEntries = () => {
       const { googleId } = this.props;
       api
-        .getJournalEntries(googleId)
-        .then(res => {
-          if (res.status === 200) {
-            this.setState({
-              entries: res.data,
-            })
-          }
-        })
+      .getJournalEntries(googleId)
+      .then(res => {
+        if (res.status === 200) {
+          this.setState({
+            entries: res.data,
+          })
+        }
+      })
     }
 
     render() {
       return (
-        <WrappedComponent 
+        <WrappedComponent
+          getJournalEntries={this.getJournalEntries}
           {...this.props}
           {...this.state}
         />
