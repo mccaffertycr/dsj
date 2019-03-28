@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
+const app = express();
 
 mongoose
   .connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/dsjdev', {
@@ -18,8 +19,6 @@ mongoose
   .catch(err => console.log(err));
 
 mongoose.Promise = global.Promise;
-
-const app = express();
 
 app.use(cors());
 app.use(morgan('dev'));
