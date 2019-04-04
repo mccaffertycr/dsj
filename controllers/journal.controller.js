@@ -2,6 +2,7 @@ const Journal = require('../models/journal');
 
 module.exports = {
   registerJournal: (req, res) => {
+    console.log(req.body);
     Journal
       .findOne(req.body)
         .then(dbResult => {

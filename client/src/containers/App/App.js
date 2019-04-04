@@ -30,9 +30,9 @@ class App extends Component {
       email: email,
       name: name,
     })
-    api.registerJournal(id).then((res, err) => {
+    api.registerJournal(id, email).then((res, err) => {
       if (err) throw err;
-      else console.log(res);
+      else console.log(res.data);
     })
   }
 
