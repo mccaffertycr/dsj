@@ -37,7 +37,7 @@
 } 
 
 .react-calendar-heatmap {
-  width: 100%;
+  width: 80%;
 }
 
 .react-calendar-heatmap .color-scale--2 { fill: #50005e; }
@@ -52,6 +52,9 @@
     min-height: 200px;
   }
   .heatmap-wrapper {
+    width: 100%;
+  }
+  .react-calendar-heatmap {
     width: 100%;
   }
 }

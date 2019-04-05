@@ -4,9 +4,17 @@ _Daily Sentiment Journal_ is a simple tool for logging how your day went. Journa
 
 ## How to Use
 
-Log in with a Google account. Then to make a new entry just pick the value that correspond's with how your day went, add a note if you'd like and press the submit button.
+Log in with a Google account, once you are logged in you'll see date and time information and whether or not you have logged an entry for the day.
+
+![journal info](./screenshots/journalinfo.JPG)
+
+To make a new entry just pick the value that correspond's with how your day went, add a note if you'd like and press the submit button.
 
 ![journal entry](./screenshots/journalentry.JPG)
+
+All of your journal entries are displayed in a calendar heatmap, scroll over the boxes for a tooltip containing the date / note.
+
+![calendar heatmap](./screenshots/heatmap.JPG)
 
 ## Installation
 
