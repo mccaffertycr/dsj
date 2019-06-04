@@ -6,7 +6,7 @@ export default function JournalData(WrappedComponent) {
   return class extends Component {
     state = {
       entries: [],
-      today: new Date(Date.now()),
+      today: new Date(Date.now())
     };
 
     componentDidMount() {
@@ -15,16 +15,14 @@ export default function JournalData(WrappedComponent) {
 
     getJournalEntries = () => {
       const { googleId } = this.props;
-      api
-      .getJournalEntries(googleId)
-      .then(res => {
+      api.getJournalEntries(googleId).then(res => {
         if (res.status === 200) {
           this.setState({
-            entries: res.data,
-          })
+            entries: res.data
+          });
         }
-      })
-    }
+      });
+    };
 
     render() {
       return (
@@ -33,7 +31,7 @@ export default function JournalData(WrappedComponent) {
           {...this.props}
           {...this.state}
         />
-      )
+      );
     }
-  }
+  };
 }
